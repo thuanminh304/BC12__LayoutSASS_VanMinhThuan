@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  a {
+    text-decoration: none !important;
+  }
+  li {
+    list-style: none !important;
+  }
+}
+
+//header
+header {
+  background-image: url(../images/yellow_top_wave_01.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 190px;
+  .header__content {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    .header__logo {
+      i {
+        display: none;
+      }
+      img {
+        width: 80px;
+        position: absolute;
+        left: 80px;
+      }
+    }
+
+    .header__navbar {
+      display: flex;
+      margin: 30px 0;
+      .navbar__left {
+        margin-right: 40px;
+        li {
+          display: inline;
+        }
+        a {
+          padding: 0 20px;
+          font-weight: 700;
+          font-size: $fs1;
+          color: $color3;
+          font-family: $ff1;
+        }
+      }
+      .navbar__right {
+        display: flex;
+        position: absolute;
+        right: 65px;
+        top: 15px;
+        align-items: center;
+
+        .btn-phone {
+          @include buttonMixin(
+            $fs1,
+            $fw1,
+            $color2,
+            $color1,
+            none,
+            20px,
+            15px,
+            25px
+          );
+
+          transition: all 0.5s;
+          margin-right: 60px;
+          &:hover {
+            @include btnHover($color1, $color2, 1px solid $color1);
+          }
+        }
+        .header__icon {
+          a {
+            font-size: $fs1;
+            color: $color3;
+            padding: 0 7px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//end header
+@include reponds-to(extraLarge) {
+  header {
+    margin-top: 50px;
+    margin-right: 25%;
+    height: 130px;
+    .header__content {
+      .header__logo {
+        i {
+          display: block;
+          position: absolute;
+          color: black;
+          font-size: 30px;
+          left: 40px;
+          top: -40px;
+        }
+        img {
+          width: 50px;
+          position: absolute;
+          top: -50px;
+        }
+      }
+      .header__navbar {
+        display: none !important;
+      }
+    }
+  }
+}
+
+//
+@include reponds-to(small) {
+  header {
+    margin-right: 10%;
+    
+  }
+}

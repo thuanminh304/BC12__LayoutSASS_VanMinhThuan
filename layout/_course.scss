@@ -1,0 +1,178 @@
+//course
+
+.course {
+  display: flex;
+  margin-top: 150px;
+  justify-content: center;
+  position: relative;
+  h1 {
+    text-align: center;
+    padding: 0 20px 50px 0;
+  }
+  .course__img {
+    img {
+      width: 85%;
+    }
+  }
+  .course__form {
+    .form {
+      box-shadow: 0 15px 20px -10px grey;
+      border-radius: 15px;
+      padding: 35px 0px 70px 30px;
+      position: relative;
+      width: 80%;
+      background-color: white;
+      .row {
+        padding-bottom: $s20px;
+      }
+      .form-input {
+        position: relative;
+
+        i {
+          position: absolute;
+          top: 12px;
+          left: 27px;
+          color: $color1;
+        }
+        input {
+          padding: 8px 0 8px 40px;
+          border-radius: 30px;
+          border: 0.5px solid gray;
+          width: 80%;
+        }
+      }
+      select {
+        padding: 8px 80px 8px 30px;
+        border-radius: 30px;
+        border: 0.5px solid gray;
+        margin-bottom: $s20px;
+        width: 91%;
+      }
+      textarea {
+        border-radius: 30px;
+        padding: 10px 0 30px 30px;
+        border: 0.5px solid gray;
+        margin-bottom: $s20px;
+        width: 91%;
+      }
+      .button {
+        @include buttonMixin(
+          13px,
+          $fw3,
+          white,
+          $color1,
+          none,
+          25px,
+          15px,
+          55px
+        );
+        z-index: 1;
+        transition: 0.2s all;
+        position: absolute;
+        bottom: 25px;
+        left: 30px;
+        &::before {
+          content: "SEND";
+          padding: 10px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+
+          transform: scale(0);
+          transition: all 0.2s;
+          transform-origin: center;
+          border-radius: 20px;
+        }
+
+        &:hover::before {
+          content: "SEND";
+          padding: 14px 54px;
+          background: white;
+          border: 1px solid $color1;
+          transform: scale(1);
+          transition: all 0.2s;
+          border-radius: 20px;
+        }
+
+        &:hover {
+          color: $color1;
+        }
+      }
+    }
+  }
+  .course-img-bot {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    bottom: -45px;
+  }
+}
+
+//@include
+
+@include reponds-to(large) {
+  .course {
+    margin-top: 115%;
+    flex-direction: column;
+    .course__img {
+      img {
+        width: 55%;
+      }
+    }
+    .course__form {
+      width: 90%;
+      margin: auto;
+      .form {
+        width: 100%;
+        h1 {
+          text-align: left;
+          font-size: 30px;
+          font-weight: 700;
+        }
+      }
+    }
+    .course-img-bot {
+      bottom: -15px;
+    }
+  }
+}
+
+@include reponds-to(medium) {
+  .course {
+    margin-top: 15%;
+    .course__img {
+      img {
+        width: 75%;
+      }
+    }
+    .course__form {
+      .form {
+        .form-input {
+          input {
+            width: 90%;
+            &:first-of-type {
+              margin-bottom: 20px;
+            }
+          }
+        }
+        .button {
+          width: 88%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+//
+@include reponds-to(small) {
+  .course {
+    .course__img {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+
+
+
+
+//carousel
+.carousel__content {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    .carousel__left {
+      position: absolute;
+      width: 32%;
+      left: 80px;
+      top: 90px;
+      h4 {
+        font-size: $fs2;
+        color: $color1;
+        font-weight: $fw2;
+      }
+      p {
+        font-size: $fs3;
+        font-weight: $fw3;
+        font-family: $ff1;
+        line-height: $lh1;
+      }
+    }
+    .carousel__right {
+      position: absolute;
+      top: -130px;
+      right: 90px;
+    }
+  }
+  
+  //end carousel
+
+  //repsonsive
+
+  @include reponds-to(extraLarge){
+    .carousel__content{
+      .carousel__left{
+        width: 40%;
+        left: 50px;
+      }
+    }
+
+  }
+
+  //992px
+
+@include reponds-to(large){
+  .carousel__content {
+    .carousel__left{
+      width: 85% ;
+      top: -60px;
+    }
+    .carousel__right{
+      top: 60px;
+      left: 20px;
+    }
+  }
+}
+
+
+//
+
+@include reponds-to(small){
+.carousel__content{
+  .carousel__right {
+    top: 110px;
+    left: 40px;
+    img {
+      width: 120%;
+    }
+  }
+}
+
+}

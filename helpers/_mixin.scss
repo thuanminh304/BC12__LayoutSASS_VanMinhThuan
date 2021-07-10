@@ -1,0 +1,44 @@
+@mixin buttonMixin(
+  $fs,
+  $fw,
+  $color,
+  $bg-color,
+  $border,
+  $borRad,
+  $pd-y,
+  $pd-x
+) {
+  font-size: $fs;
+  font-weight: $fw;
+  color: $color;
+  background-color: $bg-color;
+  border: $border;
+  border-radius: $borRad;
+  padding: $pd-y $pd-x;
+}
+
+@mixin btnHover($color, $bgcolor, $bor) {
+  color: $color;
+  background-color: $bgcolor;
+  border: $bor;
+}
+$breakpoints: (
+  extraLarge: 1200px,
+  large: 992px,
+  medium: 768px,
+small: 576px,
+);
+
+@mixin reponds-to($breakpoint) {
+  @if map-has-key($map: $breakpoints, $key: $breakpoint) {
+    $value: map-get(
+      $map: $breakpoints,
+      $key: $breakpoint,
+    );
+    @media  screen and (max-width: #{$value}) {
+      @content;
+    }
+  } @else {
+    @warn "`{$breakpoint}` không tồn tại ";
+  }
+}

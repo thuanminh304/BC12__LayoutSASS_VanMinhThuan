@@ -1,0 +1,107 @@
+//people
+.people {
+  background-color: $color4;
+  height: 800px;
+  margin-top: 40%;
+  position: relative;
+  .bg-img-top {
+    width: $width1;
+    position: absolute;
+    top: -200px;
+  }
+  .bg-img-bot {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+  }
+  .people__content {
+    justify-content: center;
+    margin: 0;
+    .people__item {
+      background-color: $color2;
+      border-radius: 15px;
+      padding: 0;
+      text-align: center;
+      max-width: 20%;
+      margin: 20px;
+      transition: 0.5s all;
+      overflow: hidden;
+
+      &:hover {
+        box-shadow: 0px 30px 30px -10px #8d8d8d;
+      }
+      .item__img {
+        img {
+          width: $width1;
+          border-radius: 15px 15px 0 0;
+          transition: 1s all;
+        }
+        &:hover img {
+          transform: scale(1.03);
+        }
+      }
+      .item__text {
+        padding: 30px 25px 20px 30px;
+        h5 {
+          font-size: $fs1;
+          color: $color1;
+        }
+        label {
+          font-size: 1.65rem;
+          font-weight: $fw3;
+        }
+      }
+    }
+  }
+}
+
+//end people
+
+@include reponds-to(extraLarge) {
+  .people {
+    .bg-img-top {
+      top: -190px;
+    }
+  }
+}
+
+@include reponds-to(large) {
+  .people {
+    margin-top: 75%;
+    .bg-img-top {
+      top: -150px;
+    }
+    .people__content {
+      margin-bottom: 20px;
+      .people__item {
+        max-width: 45%;
+        margin: 0 20px;
+      }
+    }
+  }
+}
+
+@include reponds-to(medium) {
+  .people {
+    margin-top: 90%;
+    height: 1500px;
+    .bg-img-top {
+      top: -122px;
+    }
+    .people__content {
+      .people__item {
+        max-width: 40%;
+      }
+    }
+  }
+}
+
+@include reponds-to(small) {
+  .people {
+    margin-top: 115%;
+
+    .bg-img-top {
+      top: -90px;
+    }
+  }
+}
